@@ -1,73 +1,1136 @@
-<section id="hero">
-  <h1>A agência que transforma anúncios em clientes todos os dias</h1>
-  <p>Meta Ads e Google Ads para negócios locais que querem crescer de forma previsível.</p>
-  <p><strong>Conectando você ao seu cliente.</strong></p>
-  <button>Quero atrair novos clientes</button>
-  <a href="#como-funciona">Ver como funciona na prática</a>
-</section>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TDX Digital Agency – Conectando você ao seu cliente</title>
+  <meta name="description" content="Meta Ads e Google Ads para negócios locais que querem crescer de forma previsível. Conectando você ao seu cliente.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --azul-tdx: #004bff;
+      --dourado-tdx: #ffd700;
+      --preto-tdx: #0a0a1a;
+      --cinza-claro: #f5f7fb;
+      --texto-principal: #0a0a1a;
+      --texto-secundario: #555b6b;
+      --radius-card: 18px;
+      --shadow-card: 0 14px 40px rgba(0,0,0,0.16);
+      --container-width: 1120px;
+    }
 
-<section id="depoimentos">
-  <h2>Quem já confia na TDX não quer outra agência</h2>
-  <p>Resultados reais de negócios locais que decidiram crescer com estratégia.</p>
-  <div class="depoimentos-grid">
-    <div class="card">
-      <p>“Depois que começamos com a TDX, nossa agenda nunca mais ficou vazia...”</p>
-      <span>Nome da cliente – Salão em Cidade</span>
-    </div>
-    <!-- repetir cards -->
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--texto-principal);
+      background-color: #ffffff;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      min-height: 100vh;
+      background: radial-gradient(circle at top left, rgba(0,75,255,0.08), transparent 60%),
+                  radial-gradient(circle at bottom right, rgba(255,215,0,0.06), transparent 55%);
+    }
+
+    .container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      font-size: 0.98rem;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--azul-tdx), #002a9c);
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(0, 75, 255, 0.45);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+      gap: 10px;
+    }
+
+    .btn-primary span {
+      font-size: 1.1rem;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(0, 75, 255, 0.55);
+      filter: brightness(1.05);
+    }
+
+    .btn-secondary-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--texto-secundario);
+      margin-top: 10px;
+    }
+
+    .btn-secondary-text::after {
+      content: "➜";
+      font-size: 0.95rem;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      background: rgba(0,75,255,0.06);
+      color: var(--azul-tdx);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      font-weight: 800;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--texto-secundario);
+      max-width: 560px;
+    }
+
+    /* HEADER / NAV */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(255,255,255,0.82);
+      border-bottom: 1px solid rgba(10,10,26,0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 10% 20%, var(--dourado-tdx), var(--azul-tdx));
+      box-shadow: 0 0 0 3px rgba(0,75,255,0.18), 0 10px 20px rgba(0,0,0,0.25);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      color: var(--texto-secundario);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: var(--azul-tdx);
+    }
+
+    /* DOBRA 1 – HERO */
+    #hero {
+      padding: 72px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-tagline {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--azul-tdx);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    .hero-title {
+      font-size: 2.6rem;
+      line-height: 1.1;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .hero-title span {
+      color: var(--azul-tdx);
+    }
+
+    .hero-subtitle {
+      font-size: 1.02rem;
+      color: var(--texto-secundario);
+      margin-bottom: 14px;
+      max-width: 480px;
+    }
+
+    .hero-slogan {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--dourado-tdx);
+      margin-bottom: 22px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+      font-size: 0.83rem;
+      color: var(--texto-secundario);
+    }
+
+    .hero-badge {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,75,255,0.14);
+      background-color: rgba(255,255,255,0.9);
+      backdrop-filter: blur(4px);
+    }
+
+    .hero-right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, rgba(255,255,255,0.9), rgba(10,10,26,0.98));
+      border-radius: 26px;
+      padding: 26px 22px;
+      box-shadow: var(--shadow-card);
+      color: #fff;
+      width: 100%;
+      max-width: 420px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card-tag {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 4px;
+    }
+
+    .hero-card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero-card-sub {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 14px;
+    }
+
+    .hero-metric-row {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 12px;
+      font-size: 0.82rem;
+    }
+
+    .hero-metric {
+      flex: 1;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(6,6,20,0.85);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .hero-metric-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 2px;
+    }
+
+    .hero-metric-value {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dourado-tdx);
+    }
+
+    .hero-floating-pill {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(0,75,255,0.9);
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-floating-pill span {
+      font-size: 0.85rem;
+    }
+
+    /* DOBRA 2 – DEPOIMENTOS */
+    #depoimentos {
+      background-color: var(--cinza-claro);
+    }
+
+    .depoimentos-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+    }
+
+    .depo-card {
+      background: #fff;
+      border-radius: var(--radius-card);
+      padding: 18px 18px 16px;
+      box-shadow: 0 10px 28px rgba(15,23,42,0.08);
+      border: 1px solid rgba(148,163,184,0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.9rem;
+    }
+
+    .depo-text {
+      color: var(--texto-secundario);
+    }
+
+    .depo-author {
+      font-weight: 600;
+      font-size: 0.86rem;
+    }
+
+    .depo-role {
+      font-size: 0.78rem;
+      color: var(--texto-secundario);
+    }
+
+    /* DOBRA 3 – PROBLEMA */
+    #problema {
+      background: #fff;
+    }
+
+    .problema-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.3fr) minmax(0,1.1fr);
+      gap: 36px;
+      align-items: center;
+    }
+
+    .problema-lista {
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .problema-item {
+      display: flex;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--texto-secundario);
+    }
+
+    .problema-bullet {
+      margin-top: 4px;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 2px solid var(--azul-tdx);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: var(--azul-tdx);
+      flex-shrink: 0;
+    }
+
+    .problema-highlight {
+      margin-top: 18px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(248,113,113,0.45);
+      background: rgba(254,226,226,0.7);
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #b91c1c;
+    }
+
+    .problema-card {
+      background: #050816;
+      border-radius: 22px;
+      padding: 20px 18px;
+      color: #fff;
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(148,163,184,0.5);
+    }
+
+    .problema-card-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(248,250,252,0.7);
+      margin-bottom: 8px;
+    }
+
+    .problema-card-main {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .problema-card-graph {
+      height: 120px;
+      border-radius: 16px;
+      background: radial-gradient(circle at top right, rgba(239,68,68,0.55), #020617);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .problema-graph-line {
+      position: absolute;
+      inset: 10px 12px 12px 14px;
+      border-left: 1px dashed rgba(148,163,184,0.5);
+      border-bottom: 1px dashed rgba(148,163,184,0.5);
+    }
+
+    .problema-graph-trend {
+      position: absolute;
+      left: 20px;
+      right: 10px;
+      bottom: 16px;
+      height: 3px;
+      background: linear-gradient(90deg, #fecaca, #ef4444);
+      transform: skewX(-18deg);
+    }
+
+    .problema-graph-dot {
+      position: absolute;
+      right: 26px;
+      bottom: 32px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #ef4444;
+      box-shadow: 0 0 18px rgba(248,113,113,0.9);
+    }
+
+    .problema-card-note {
+      font-size: 0.8rem;
+      color: rgba(226,232,240,0.9);
+    }
+
+    /* DOBRA 4 – SOLUÇÃO TDX PRIME */
+    #solucao {
+      background: linear-gradient(135deg, #020617, #020617 35%, #001642 100%);
+      color: #f9fafb;
+    }
+
+    .solucao-header .section-title {
+      color: #f9fafb;
+    }
+
+    .solucao-header .section-subtitle {
+      color: rgba(226,232,240,0.85);
+    }
+
+    .solucao-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.05fr);
+      gap: 32px;
+      margin-top: 22px;
+      align-items: flex-start;
+    }
+
+    .solucao-steps {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+    }
+
+    .step-card {
+      background: rgba(15,23,42,0.9);
+      border-radius: 18px;
+      padding: 14px 14px 12px;
+      border: 1px solid rgba(148,163,184,0.5);
+      font-size: 0.86rem;
+    }
+
+    .step-tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(148,163,184,0.9);
+      margin-bottom: 4px;
+    }
+
+    .step-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+      color: var(--dourado-tdx);
+    }
+
+    .step-text {
+      color: rgba(226,232,240,0.92);
+      font-size: 0.82rem;
+    }
+
+    .solucao-highlight {
+      margin-top: 20px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(250,250,250,0.3);
+      font-size: 0.85rem;
+      text-align: center;
+      background: radial-gradient(circle at top, rgba(148,163,184,0.45), rgba(15,23,42,0.98));
+    }
+
+    .solucao-side-card {
+      background: radial-gradient(circle at top left, rgba(37,99,235,0.8), #020617);
+      border-radius: 22px;
+      padding: 18px 16px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(129,140,248,0.7);
+    }
+
+    .solucao-side-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .solucao-side-list {
+      font-size: 0.85rem;
+      color: rgba(226,232,240,0.95);
+      display: grid;
+      gap: 6px;
+    }
+
+    .solucao-side-list li::before {
+      content: "• ";
+      color: var(--dourado-tdx);
+    }
+
+    /* DOBRA 5 – BENEFÍCIOS */
+    #beneficios {
+      background: #fff;
+    }
+
+    .beneficios-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .beneficio-card {
+      border-radius: var(--radius-card);
+      padding: 16px 16px 14px;
+      background: #ffffff;
+      border: 1px solid rgba(148,163,184,0.35);
+      box-shadow: 0 14px 32px rgba(15,23,42,0.08);
+      font-size: 0.9rem;
+    }
+
+    .beneficio-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--azul-tdx);
+    }
+
+    .beneficio-text {
+      color: var(--texto-secundario);
+      font-size: 0.86rem;
+    }
+
+    .beneficios-footer {
+      margin-top: 18px;
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    /* DOBRA 6 – CTA FINAL */
+    #cta-final {
+      background: radial-gradient(circle at top, #0a0a1a, #020617 50%, #000 100%);
+      color: #f9fafb;
+    }
+
+    .cta-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .cta-subtitle {
+      margin-top: 8px;
+      color: rgba(226,232,240,0.9);
+      font-size: 0.98rem;
+    }
+
+    .cta-list {
+      list-style: none;
+      margin: 20px auto 20px;
+      max-width: 480px;
+      text-align: left;
+      font-size: 0.9rem;
+      color: rgba(226,232,240,0.9);
+    }
+
+    .cta-list li {
+      margin-bottom: 6px;
+    }
+
+    .cta-list li::before {
+      content: "✔ ";
+      color: var(--dourado-tdx);
+    }
+
+    .cta-note {
+      margin-top: 10px;
+      font-size: 0.84rem;
+      color: rgba(209,213,219,0.9);
+    }
+
+    .cta-final-line {
+      margin-top: 18px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--dourado-tdx);
+    }
+
+    footer {
+      padding: 18px 0 26px;
+      font-size: 0.78rem;
+      color: rgba(148,163,184,0.9);
+      text-align: center;
+      background: #020617;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 960px) {
+      .hero-grid,
+      .problema-grid,
+      .solucao-grid {
+        grid-template-columns: minmax(0,1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .depoimentos-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+
+      .beneficios-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+      }
+
+      header {
+        position: static;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .hero-title {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: 48px 0;
+      }
+
+      .depoimentos-grid,
+      .beneficios-grid,
+      .solucao-steps {
+        grid-template-columns: minmax(0,1fr);
+      }
+
+      .hero-card {
+        max-width: 100%;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+      }
+
+      .hero-title {
+        font-size: 2rem;
+      }
+
+      .hero-badges {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- HEADER -->
+    <header>
+      <div class="container nav">
+        <div class="logo">
+          <div class="logo-mark"></div>
+          <div>
+            <div>TDX Digital Agency</div>
+            <small style="font-size:0.72rem; color:var(--texto-secundario);">Conectando você ao seu cliente</small>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="#depoimentos">Resultados</a>
+          <a href="#solucao">Método TDX PRIME</a>
+          <a href="#beneficios">Serviços</a>
+          <a href="#cta-final">Falar com a TDX</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- DOBRA 1 – HERO -->
+      <section id="hero">
+        <div class="container hero-grid">
+          <div class="hero-left">
+            <div class="hero-tagline">Agência especialista em negócios locais</div>
+            <h1 class="hero-title">
+              A agência que transforma <span>anúncios</span><br />em clientes todos os dias.
+            </h1>
+            <p class="hero-subtitle">
+              Meta Ads e Google Ads para negócios locais que querem crescer de forma previsível, sem depender apenas de indicação.
+            </p>
+            <p class="hero-slogan">
+              Conectando você ao seu cliente.
+            </p>
+            <button class="btn-primary" onclick="document.getElementById('cta-final').scrollIntoView({behavior:'smooth'})">
+              <span>⚡</span> Quero atrair novos clientes
+            </button>
+            <a href="#solucao" class="btn-secondary-text">
+              Ver como funciona na prática
+            </a>
+            <div class="hero-badges">
+              <div class="hero-badge">Gestão completa de tráfego</div>
+              <div class="hero-badge">Foco em negócios locais</div>
+              <div class="hero-badge">Estratégia sob medida para sua cidade</div>
+            </div>
+          </div>
+          <div class="hero-right">
+            <!-- Aqui depois você pode colocar uma imagem do Thiago/Avatar -->
+            <div class="hero-card">
+              <div class="hero-floating-pill">
+                <span>📈</span> Agenda cheia com previsibilidade
+              </div>
+              <div class="hero-card-tag">Dashboard de resultados</div>
+              <div class="hero-card-title">Visão clara do retorno dos seus anúncios</div>
+              <div class="hero-card-sub">Acompanhe os números que realmente importam: leads, custo por cliente e faturamento.</div>
+              <div class="hero-metric-row">
+                <div class="hero-metric">
+                  <div class="hero-metric-label">Leads por mês</div>
+                  <div class="hero-metric-value">+218</div>
+                </div>
+                <div class="hero-metric">
+                  <div class="hero-metric-label">Custo por lead</div>
+                  <div class="hero-metric-value">R$ 4,32</div>
+                </div>
+              </div>
+              <div class="hero-metric-row">
+                <div class="hero-metric">
+                  <div class="hero-metric-label">Retorno estimado</div>
+                  <div class="hero-metric-value">6,3x</div>
+                </div>
+                <div class="hero-metric">
+                  <div class="hero-metric-label">Crescimento em 90 dias</div>
+                  <div class="hero-metric-value">+142%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOBRA 2 – DEPOIMENTOS -->
+      <section id="depoimentos">
+        <div class="container">
+          <div class="depoimentos-header">
+            <div>
+              <div class="section-label">Depoimentos reais</div>
+              <h2 class="section-title">Quem já confia na TDX não quer outra agência</h2>
+              <p class="section-subtitle">
+                Resultados reais de negócios locais que decidiram parar de improvisar e crescer com estratégia.
+              </p>
+            </div>
+            <div style="font-size:0.86rem; color:var(--texto-secundario); max-width:260px;">
+              Prints de WhatsApp, avaliações e vídeos podem entrar aqui, mostrando a evolução da agenda e dos resultados.
+            </div>
+          </div>
+
+          <div class="depoimentos-grid">
+            <div class="depo-card">
+              <p class="depo-text">
+                “Depois que começamos com a TDX, nossa agenda nunca mais ficou vazia. Hoje eu escolho quais clientes quero atender.”
+              </p>
+              <div>
+                <div class="depo-author">Cliente de salão de beleza</div>
+                <div class="depo-role">Negócio local – Estética feminina</div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <p class="depo-text">
+                “Aparecemos em primeiro no Google e no Instagram. O telefone não para e os pedidos de orçamento aumentaram muito.”
+              </p>
+              <div>
+                <div class="depo-author">Clínica / Studio</div>
+                <div class="depo-role">Campanhas de Google + Meta</div>
+              </div>
+            </div>
+            <div class="depo-card">
+              <p class="depo-text">
+                “Eu tinha medo de investir em anúncio. Agora tenho clareza dos números e sei exatamente quanto cada cliente me custa.”
+              </p>
+              <div>
+                <div class="depo-author">Empreendedor local</div>
+                <div class="depo-role">Negócio de serviços</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOBRA 3 – PROBLEMA -->
+      <section id="problema">
+        <div class="container problema-grid">
+          <div>
+            <div class="section-label">O problema</div>
+            <h2 class="section-title">
+              Seu negócio não cresce porque você não é visto por quem deveria te contratar.
+            </h2>
+            <p class="section-subtitle">
+              Enquanto você espera os clientes chegarem, a concorrência aparece na frente — todos os dias.
+            </p>
+
+            <div class="problema-lista">
+              <div class="problema-item">
+                <div class="problema-bullet">!</div>
+                <div>
+                  <strong>Agenda irregular</strong> – semanas cheias, semanas vazias, sem previsibilidade de faturamento.
+                </div>
+              </div>
+              <div class="problema-item">
+                <div class="problema-bullet">!</div>
+                <div>
+                  <strong>Dependência de indicação</strong> – funciona, mas não escala e te deixa sempre na mão.
+                </div>
+              </div>
+              <div class="problema-item">
+                <div class="problema-bullet">!</div>
+                <div>
+                  <strong>Concorrência dominando Instagram e Google</strong> – o cliente escolhe quem aparece primeiro, não quem é “melhor”.
+                </div>
+              </div>
+              <div class="problema-item">
+                <div class="problema-bullet">!</div>
+                <div>
+                  <strong>Falta de previsibilidade</strong> – todo mês é uma surpresa: você nunca sabe quanto vai entrar.
+                </div>
+              </div>
+              <div class="problema-item">
+                <div class="problema-bullet">!</div>
+                <div>
+                  <strong>Perda diária de clientes</strong> – por não ter anúncios estratégicos ativos 24h.
+                </div>
+              </div>
+              <div class="problema-item">
+                <div class="problema-bullet">!</div>
+                <div>
+                  <strong>Conteúdo sem estratégia</strong> – você posta, mas parece que fala sozinho.
+                </div>
+              </div>
+            </div>
+
+            <div class="problema-highlight">
+              Se você não controla seu marketing, você não controla seu faturamento.
+            </div>
+          </div>
+
+          <div>
+            <div class="problema-card">
+              <div class="problema-card-title">Cenário atual sem estratégia</div>
+              <div class="problema-card-main">
+                Faturamento oscilando, agenda vazia em meses críticos e oportunidades indo para a concorrência.
+              </div>
+              <div class="problema-card-graph">
+                <div class="problema-graph-line"></div>
+                <div class="problema-graph-trend"></div>
+                <div class="problema-graph-dot"></div>
+              </div>
+              <div class="problema-card-note">
+                Cada dia sem posicionamento e anúncios bem feitos é um dia em que alguém da sua cidade está ocupando o seu lugar na mente do cliente.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOBRA 4 – SOLUÇÃO TDX PRIME -->
+      <section id="solucao">
+        <div class="container">
+          <div class="solucao-header">
+            <div class="section-label" style="background:rgba(15,23,42,0.9); color:var(--dourado-tdx);">
+              A solução
+            </div>
+            <h2 class="section-title">
+              Existe um método para atrair clientes todos os dias — e ele se chama TDX PRIME.
+            </h2>
+            <p class="section-subtitle">
+              Uma metodologia criada para negócios locais que precisam crescer com previsibilidade, escala e segurança.
+            </p>
+          </div>
+
+          <div class="solucao-grid">
+            <div>
+              <div class="solucao-steps">
+                <div class="step-card">
+                  <div class="step-tag">Passo 1</div>
+                  <div class="step-title">Públicos Personalizados de Alta Precisão</div>
+                  <div class="step-text">
+                    Segmentamos pessoas com perfil real de compra, na sua região, com interesses e comportamentos alinhados ao seu negócio.
+                  </div>
+                </div>
+                <div class="step-card">
+                  <div class="step-tag">Passo 2</div>
+                  <div class="step-title">Guerrilha Local</div>
+                  <div class="step-text">
+                    Sua marca presente em múltiplos pontos de contato: feed, stories, reels, Google e remarketing.
+                  </div>
+                </div>
+                <div class="step-card">
+                  <div class="step-tag">Passo 3</div>
+                  <div class="step-title">Aquecimento de Redes</div>
+                  <div class="step-text">
+                    Conteúdos estratégicos para construir autoridade, gerar desejo e fazer o cliente confiar em você.
+                  </div>
+                </div>
+                <div class="step-card">
+                  <div class="step-tag">Passo 4</div>
+                  <div class="step-title">Otimizações Semanais</div>
+                  <div class="step-text">
+                    Acompanhamento contínuo das campanhas para reduzir custos e aumentar o retorno por cada real investido.
+                  </div>
+                </div>
+                <div class="step-card">
+                  <div class="step-tag">Passo 5</div>
+                  <div class="step-title">Remarketing Inteligente</div>
+                  <div class="step-text">
+                    Anúncios específicos para quem já interagiu com você, aumentando a taxa de conversão sem aumentar o alcance.
+                  </div>
+                </div>
+                <div class="step-card">
+                  <div class="step-tag">Passo 6</div>
+                  <div class="step-title">Relatórios + Direcionamento</div>
+                  <div class="step-text">
+                    Você entende os números, sabe o que está funcionando e qual o próximo passo — sem achismo.
+                  </div>
+                </div>
+              </div>
+
+              <div class="solucao-highlight">
+                Não é mágica. É método. E método funciona todos os dias.
+              </div>
+            </div>
+
+            <div>
+              <div class="solucao-side-card">
+                <div class="solucao-side-title">O que muda quando você aplica o TDX PRIME:</div>
+                <ul class="solucao-side-list">
+                  <li>Agenda mais previsível e menos “susto” no fim do mês.</li>
+                  <li>Posicionamento forte na mente do cliente da sua cidade.</li>
+                  <li>Anúncios que trabalham por você enquanto você atende.</li>
+                  <li>Clareza dos números e das ações que geram resultado.</li>
+                  <li>Estratégia pensada para o seu nicho, não receita de bolo.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- DOBRA 5 – BENEFÍCIOS / SERVIÇOS -->
+      <section id="beneficios">
+        <div class="container">
+          <div class="section-label">O que você recebe</div>
+          <h2 class="section-title">
+            Trabalhar com a TDX vai muito além de simplesmente “fazer anúncio”.
+          </h2>
+          <p class="section-subtitle">
+            Você ganha uma equipe pensando 24h na sua estratégia, no seu posicionamento e no seu faturamento.
+          </p>
+
+          <div class="beneficios-grid">
+            <div class="beneficio-card">
+              <div class="beneficio-title">Gestão completa de Meta Ads</div>
+              <p class="beneficio-text">
+                Campanhas de Instagram e Facebook criadas para atrair clientes todos os dias, não só curtidas.
+              </p>
+            </div>
+            <div class="beneficio-card">
+              <div class="beneficio-title">Google Ads + Google Meu Negócio</div>
+              <p class="beneficio-text">
+                Sua empresa em destaque nas buscas da sua cidade, aparecendo para quem já está pronto para comprar.
+              </p>
+            </div>
+            <div class="beneficio-card">
+              <div class="beneficio-title">Criativos profissionais</div>
+              <p class="beneficio-text">
+                Imagens, vídeos, Reels e carrosséis pensados para converter, alinhados com sua identidade e posicionamento.
+              </p>
+            </div>
+            <div class="beneficio-card">
+              <div class="beneficio-title">Calendário de conteúdo estratégico</div>
+              <p class="beneficio-text">
+                Planejamento mensal com foco em desejo, autoridade, oferta e prova social, integrando orgânico e tráfego pago.
+              </p>
+            </div>
+            <div class="beneficio-card">
+              <div class="beneficio-title">Suporte direto com especialista</div>
+              <p class="beneficio-text">
+                Nada de suporte genérico. Você fala com quem está no dia a dia das campanhas e entende do seu nicho.
+              </p>
+            </div>
+            <div class="beneficio-card">
+              <div class="beneficio-title">Estratégia personalizada</div>
+              <p class="beneficio-text">
+                Cada cidade, nicho e ticket pedem um plano diferente. Aqui, nada é “copiar e colar”.
+              </p>
+            </div>
+          </div>
+
+          <p class="beneficios-footer">
+            Você não está contratando anúncios. Você está contratando resultados.
+          </p>
+        </div>
+      </section>
+
+      <!-- DOBRA 6 – CTA FINAL -->
+      <section id="cta-final">
+        <div class="container">
+          <div class="cta-wrap">
+            <div class="section-label" style="background:rgba(15,23,42,0.9); color:var(--dourado-tdx); margin-bottom:12px;">
+              Próximo passo
+            </div>
+            <h2 class="section-title">
+              Pronto para transformar seu negócio em uma máquina de clientes?
+            </h2>
+            <p class="cta-subtitle">
+              A TDX conecta você ao seu cliente com estratégia, dados e um método que funciona todos os dias.
+            </p>
+
+            <ul class="cta-list">
+              <li>Diagnóstico gratuito da sua presença digital.</li>
+              <li>Entendimento da sua cidade, público e concorrência.</li>
+              <li>Desenho inicial de uma estratégia personalizada para o seu negócio.</li>
+            </ul>
+
+            <button class="btn-primary">
+              <span>💬</span> Falar com a TDX agora
+            </button>
+
+            <p class="cta-note">
+              Sem compromisso. Sem pressão. Apenas clareza sobre o que realmente funciona para o seu negócio.
+            </p>
+
+            <p class="cta-final-line">
+              Crescer não é sobre sorte. É sobre estratégia.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      TDX Digital Agency · Conectando você ao seu cliente · © <span id="year"></span> – Todos os direitos reservados.
+    </footer>
   </div>
-</section>
 
-<section id="problema">
-  <h2>Seu negócio não cresce porque você não é visto por quem deveria te contratar</h2>
-  <p>Enquanto você espera os clientes chegarem, a concorrência aparece na frente — todos os dias.</p>
-  <ul>
-    <li>Agenda irregular: semanas cheias e semanas vazias.</li>
-    <li>Dependência de indicação: funciona, mas não escala.</li>
-    <li>Concorrência dominando Instagram e Google.</li>
-    <li>Falta de previsibilidade financeira.</li>
-    <li>Perda diária de clientes por falta de anúncios ativos.</li>
-    <li>Conteúdo sem estratégia.</li>
-  </ul>
-  <p><strong>Se você não controla seu marketing, você não controla seu faturamento.</strong></p>
-</section>
-
-<section id="solucao">
-  <h2>Existe um método para atrair clientes todos os dias — e ele se chama TDX PRIME</h2>
-  <p>Uma metodologia criada para negócios locais que precisam crescer com previsibilidade, escala e segurança.</p>
-  <ol>
-    <li><strong>Públicos Personalizados de Alta Precisão</strong> – segmentação avançada.</li>
-    <li><strong>Guerrilha Local</strong> – sua marca em todos os lugares da cidade.</li>
-    <li><strong>Aquecimento de Redes</strong> – construção de autoridade.</li>
-    <li><strong>Otimizações Semanais</strong> – reduzir custo por cliente.</li>
-    <li><strong>Remarketing Inteligente</strong> – converter leads quentes.</li>
-    <li><strong>Relatórios + Estratégia</strong> – decisões baseadas em dados.</li>
-  </ol>
-  <p><strong>Não é mágica. É método. E método funciona todos os dias.</strong></p>
-</section>
-
-<section id="beneficios">
-  <h2>O que você recebe trabalhando com a TDX vai muito além de anunciar</h2>
-  <p>Você ganha uma equipe pensando 24 horas na sua estratégia, no seu posicionamento e no seu faturamento.</p>
-  <div class="beneficios-grid">
-    <div class="card">
-      <h3>Gestão completa de Meta Ads</h3>
-      <p>Campanhas focadas em atrair clientes, não apenas cliques.</p>
-    </div>
-    <!-- demais benefícios em cards -->
-  </div>
-  <p><strong>Você não está contratando anúncios. Você está contratando resultados.</strong></p>
-</section>
-
-<section id="cta-final">
-  <h2>Pronto para transformar seu negócio em uma máquina de clientes?</h2>
-  <p>A TDX conecta você ao seu cliente com estratégia, dados e um método que funciona todos os dias.</p>
-  <ul>
-    <li>Diagnóstico gratuito.</li>
-    <li>Análise da sua cidade, público e concorrência.</li>
-    <li>Primeiro desenho de estratégia personalizada.</li>
-  </ul>
-  <button>Falar com a TDX agora</button>
-  <p>Sem compromisso. Apenas clareza sobre o que realmente funciona para o seu negócio.</p>
-  <p><strong>Crescer não é sobre sorte. É sobre estratégia.</strong></p>
-</section>
+  <script>
+    // Atualiza ano automaticamente
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
